@@ -11,6 +11,7 @@
 #
 ###########################################################################
 #https://gallery.technet.microsoft.com/scriptcenter/AD-account-Audit-find-bfcc60db
+#Not exhuastive as you may have hidden privileged account leveraging SIDhistory or root configurations ACL hijack
 
 [CmdletBinding(DefaultParametersetName="CurrentForest")] 
 param
