@@ -18,6 +18,8 @@ $ErrorActionPreference = 'Continue'
 
 $OUs  = Get-ADOrganizationalUnit -Filter * | Select-Object -ExpandProperty DistinguishedName
 
+$OUs += get-adrootdse | Select-Object -ExpandProperty rootDomainNamingContext
+
 $OUs += Get-ADObject -SearchBase (Get-ADDomain).DistinguishedName -SearchScope OneLevel -LDAPFilter '(objectClass=container)' | Select-Object -ExpandProperty DistinguishedName
 
 # Loop through each of the OUs and retrieve their permissions.
