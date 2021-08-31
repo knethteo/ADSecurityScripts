@@ -1,3 +1,18 @@
+$title    = 'Disclaimer Confirmation'
+$question = 'Have you read and understand the disclaimer and do you agree with the disclaimer? The script can be found here: https://bit.ly/tad_hcscript_disclaimer'
+
+$choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
+$choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes, I have read, understand and agree the disclaimer'))
+$choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&No, I do not wish to proceed'))
+
+$decision = $Host.UI.PromptForChoice($title, $question, $choices, 1)
+if ($decision -eq 0) {
+    Write-Host 'confirmed'
+} else {
+    Write-Host 'cancelled'
+}
+
+
 $DomainName = Read-Host -Prompt 'Please enter the Domain Name'
 .\ADPrivilegeAccounts-Audit-v3.ps1 -domain $DomainName
 Write-Host "Review outputfile for more info"
