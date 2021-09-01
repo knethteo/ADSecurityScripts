@@ -1,5 +1,5 @@
 $title    = 'Disclaimer Confirmation'
-$question = 'Have you read and understand the disclaimer and do you agree with the disclaimer? The script can be found here: https://bit.ly/tad_hcscript_disclaimer'
+$question = 'Have you read and understand the disclaimer and do you agree with the disclaimer? The disclaimer can be found here: https://bit.ly/tad_hcscript_disclaimer'
 
 $choices = New-Object Collections.ObjectModel.Collection[Management.Automation.Host.ChoiceDescription]
 $choices.Add((New-Object Management.Automation.Host.ChoiceDescription -ArgumentList '&Yes, I have read, understand and agree the disclaimer'))
